@@ -8,6 +8,13 @@ routes.get("/", (req, res) => {
     return res.sendFile("./htmls/js-exploits.html", {root:__dirname});
 });
 
+routes.get("/log", (req, res) => {
+    console.log("Connection received: " +  req.connection.remoteAddress);
+
+    console.log(req.url);
+
+    return res.send("Ok");
+});
 
 routes.get("/openredirect*", (req, res) => {
     console.log("Connection received: " +  req.connection.remoteAddress);
