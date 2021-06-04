@@ -6,6 +6,8 @@ Server prepared for SSRF post exploitation, javascript exploits, tools and open 
 # Installation
 
 ```
+git clone https://github.com/RafaelSantos025/js-ssrf.gi
+cd js-ssrf/
 npm install express
 ```
 
