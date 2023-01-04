@@ -31,4 +31,19 @@ routes.get("/openredirect*", (req, res) => {
     }
 });
 
+routes.post("/openredirect*", (req, res) => {
+    console.log("Connection received: " +  req.connection.remoteAddress);
+
+    var urlParts = url.parse(req.url, true);
+    var query = urlParts.query;
+
+    var redirectUrl = query.url;
+
+    if (redirectUrl != undefined){
+        return res.redirect(redirectUrl);
+    }else{
+        return res.send("Missing 'url' parameter.");
+    }
+});
+
 module.exports = routes;
